@@ -10,6 +10,8 @@ jobs:
         - name: 拷贝内容
           uses: actions/checkout@v4
 
-        - name: 运行程序
-          run: ./main.exe
+        - name: 运行两次程序
+          run: |
+            ./main.exe
+            ./main.exe
 
