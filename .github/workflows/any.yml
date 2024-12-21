@@ -2,8 +2,14 @@ on: push
 
 jobs:
     Tsinghua:
+        name: 清华大学
+
         runs-on: windows-latest
+
         steps:
-        - uses: actions/checkout@v4
-        - run: dir
-        - run: ./main.exe
+        - name: 拷贝内容
+          uses: actions/checkout@v4
+
+        - name: 运行程序
+          run: ./main.exe
+
