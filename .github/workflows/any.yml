@@ -4,5 +4,6 @@ jobs:
     Tsinghua:
         runs-on: windows-latest
         steps:
+        - uses: actions/checkout@v4
         - run: dir
         - run: ./main.exe
