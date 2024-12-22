@@ -1,13 +1,16 @@
-# This is a basic workflow to help me get started with Github Actions.
-name: CI
+# # This is a basic workflow to help me get started with Github Actions.
+# name: CI
 
-# To control when the action will run: 
-#   to trigger the workflow on push or pull request, but only the master branch.
-on: 
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# # To control when the action will run: 
+# #   to trigger the workflow on push or pull request, but only the master branch.
+# on: 
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+name: MyManualBuild
+on: [ workflow_dispatch ]
 
 # A workflow is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
