@@ -1,18 +1,32 @@
-name: hello-word
-on: push
+# This is a basic workflow to help me get started with Github Actions.
+name: CI
 
+# To control when the action will run: 
+#   to trigger the workflow on push or pull request, but only the master branch.
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
-    Tsinghua:
-        name: 清华大学
+  # This workflow contains a single job called "build".
+  build:
+    # The runner (that this job will run on) runs on Ubuntu.
+    runs-on: ubuntu-latest
 
-        runs-on: windows-latest
+    # Steps represent a sequence of tasks that will be executed, as part of the job.
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job(s) can access it.
+      - uses: actions/checkout@v4
 
-        steps:
-        - name: 拷贝内容
-          uses: actions/checkout@v4
-
-        - name: 运行两次程序
-          run: |
-            ./main.exe
-            ./main.exe
-
+      # To run a single command using the runner's shell.
+      - name: to run a single command
+        run: echo ".- -. .... .- ---"
+      
+      # To run a set of commands using the runner's shell.
+      - name: to run a set of commands
+        run: |
+          echo "amy"
+          echo "fran"
