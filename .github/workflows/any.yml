@@ -9,8 +9,10 @@
 #   pull_request:
 #     branches: [ main ]
 
-name: MyManualBuild
-on: [ workflow_dispatch ]
+name: cronjob
+on: 
+  schedule:
+    - cron: '10 13 * * 0'
 
 # A workflow is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
