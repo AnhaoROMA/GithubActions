@@ -12,7 +12,7 @@
 name: cronjob
 on: 
   schedule:
-    - cron: '10 13 * * 0'
+    - cron: '15 13 * * 0'
 
 # A workflow is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
@@ -29,9 +29,3 @@ jobs:
       # To run a single command using the runner's shell.
       - name: to run a single command
         run: echo ".- -. .... .- ---"
-      
-      # To run a set of commands using the runner's shell.
-      - name: to run a set of commands
-        run: |
-          echo "amy"
-          echo "fran"
