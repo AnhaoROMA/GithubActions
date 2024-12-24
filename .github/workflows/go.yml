@@ -12,11 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Before Modified
-        run: |
-          echo "$user_name"
-          echo "::set-env name=user_name::zero"
-          echo "$user_name"
+      - name: Dafault
+        run: echo "$GITHUB_WORKFLOW"
 
     # runs-on: ubuntu-latest
     # steps:
