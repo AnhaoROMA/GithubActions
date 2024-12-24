@@ -8,12 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      furutaka: "IJN"
-
     steps:
-      - name: Job Scope
-        run: echo "$furutaka"
+      - name: Step Scope
+        env:
+          enterprise: "USN"
+        run: echo "$enterprise"
 
     # runs-on: ubuntu-latest
     # steps:
