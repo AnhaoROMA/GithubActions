@@ -4,21 +4,16 @@ on:
   push:
     branches: [ "main" ]
 
-env:
-  fc_anhao: "Atletico de Madrid"
-  fc_eisen: "Inter Milan"
-  fc_furong: "Barcelona"
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Workflow Scope
-        run: |
-          echo "Anhao's favourite football club is '$fc_anhao'"
-          echo "Eisen's favourite football club is '$fc_eisen'"
-          echo "Furong's favourite football club is '$fc_furong'"
 
+    env:
+      furutaka: "IJN"
+
+    steps:
+      - name: Job Scope
+        run: echo "$furutaka"
 
     # runs-on: ubuntu-latest
     # steps:
