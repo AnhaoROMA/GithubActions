@@ -1,31 +1,24 @@
 name: GoProgram
 
-on:
-  push:
-    branches: [ "main" ]
-
-env:
-  user_name: "paul"
+on: push
 
 jobs:
-  build:
+  FailJobIssueDemo:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Dafault
-        run: echo "$GITHUB_WORKFLOW"
-
-    # runs-on: ubuntu-latest
-    # steps:
-    # - uses: actions/checkout@v4
-
-    # - name: Set up Go
-    #   uses: actions/setup-go@v4
-    #   with:
-    #     go-version: '1.20'
-
-    # - name: Build
-    #   run: go build -v ./...
-
-    # - name: ls
-    #   run: ls
+    - name: Step is going to pass
+      run: echo Passing step
+    - name: Step is going to fail
+      run: exit 1
+    - name: Step To run on failure
+      if: ${{ failure() }}
+      run: |
+        curl \
+        --request POST \
+        --url https://api.github.com/repos/${{ github.repository }}/issues \
+        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'content-type: application/json' \
+        --data '{
+          "title": "Issue created due to workflow failure: ${{ github.run_id }}",
+          "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n due to failure in run:_${{ github.run_id }}_."
+        }'
