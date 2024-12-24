@@ -5,9 +5,9 @@ on:
     branches: [ "main" ]
 
 env:
-  anhao: "Atletico de Madrid"
-  eisen: "Inter Milan"
-  furong: "Barcelona"
+  fc_anhao: "Atletico de Madrid"
+  fc_eisen: "Inter Milan"
+  fc_furong: "Barcelona"
 
 jobs:
   build:
@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: Workflow Scope
         run: |
-          echo "Anhao's favourite football club is '$anhao'"
-          echo "Eisen's favourite football club is '$eisen'"
-          echo "Furong's favourite football club is '$furong'"
+          echo "Anhao's favourite football club is '$fc_anhao'"
+          echo "Eisen's favourite football club is '$fc_eisen'"
+          echo "Furong's favourite football club is '$fc_furong'"
 
 
     # runs-on: ubuntu-latest
