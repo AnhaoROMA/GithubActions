@@ -2,24 +2,14 @@ name: GoProgram
 
 on: push
 
+env:
+  user_name: "abc"
+
 jobs:
   FailJobIssueDemo:
-    permissions: write-all
     runs-on: ubuntu-latest
+    env:
+      user_name: "abc"
     steps:
-    - name: Step is going to pass
-      run: echo Passing step
-    - name: Step is going to fail
-      run: exit 1
-    - name: Step To run on failure
-      if: ${{ failure() }}
-      run: |
-        curl \
-        --request POST \
-        --url https://api.github.com/repos/${{ github.repository }}/issues \
-        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'content-type: application/json' \
-        --data '{
-          "title": "Issue created due to workflow failure: ${{ github.run_id }}",
-          "body": "This issue was automatically created by the workflow **${{ github.workflow }}**."
-        }'
+    - run: echo $user_name
+      
