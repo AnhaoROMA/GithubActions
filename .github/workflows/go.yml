@@ -4,15 +4,19 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  user_name: "paul"
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step Scope
-        env:
-          enterprise: "USN"
-        run: echo "$enterprise"
+      - name: Before Modified
+        run: |
+          echo "$user_name"
+          echo "::set-env name=user_name::zero"
+          echo "$user_name"
 
     # runs-on: ubuntu-latest
     # steps:
