@@ -6,7 +6,7 @@ env:
   user_name: "abc"
 
 jobs:
-  FailJobIssueDemo:
+  Demo:
     runs-on: ubuntu-latest
     env:
       user_name: "efg"
