@@ -10,5 +10,6 @@ var (
 )
 
 func main() {
+	flag.Parse()
 	fmt.Printf(`My favourite football club is "%s".`, *club)
 }
