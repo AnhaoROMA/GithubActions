@@ -9,7 +9,7 @@ jobs:
   FailJobIssueDemo:
     runs-on: ubuntu-latest
     env:
-      user_name: "abc"
+      user_name: "efg"
     steps:
     - run: echo $user_name
       
