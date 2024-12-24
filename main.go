@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
+
+var (
+	club = flag.String("club", "Atletico de Madrid", "FC")
+)
 
 func main() {
-	fmt.Println("西山苍苍 东海茫茫")
+	fmt.Printf(`My favourite football club is "%s".`, *club)
 }
