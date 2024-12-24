@@ -13,9 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name:
+      - name: Workflow Scope
         run: |
           echo "Anhao's favourite football club is '$anhao'"
+          echo "Eisen's favourite football club is '$eisen'"
+          echo "Furong's favourite football club is '$furong'"
 
 
     # runs-on: ubuntu-latest
